@@ -19,7 +19,8 @@ class CreateProductUnitsTable extends Migration
             $table->integer('unit_id')->unsigned();            
             $table->integer('qty_minimum');
             $table->integer('base_price');
-            $table->integer('sell_price');            
+            $table->integer('sell_price');   
+            $table->integer('stock')->nullable();         
             $table->timestamps();
         });
     }

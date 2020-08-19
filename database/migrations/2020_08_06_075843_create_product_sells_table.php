@@ -18,8 +18,9 @@ class CreateProductSellsTable extends Migration
             $table->string('product_code',100);
             $table->integer('unit_id')->unsigned();            
             $table->integer('qty_minimum');
-            $table->integer('base_price');
-            $table->integer('sell_price');
+            $table->double('base_price');
+            $table->double('sell_price');
+            $table->integer('stock')->nullable();
             $table->timestamps();
         });
     }

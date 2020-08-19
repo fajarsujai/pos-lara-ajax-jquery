@@ -109,7 +109,7 @@
               {data: 'products.product_name', name: 'product_name'},
               {data: 'units.unit_name', name: 'unit_name'},              
               {data: 'qty_minimum', name: 'qty_minimum'},
-              {data: 'stock_units.stock', name: 'stock_unit'},
+              {data: 'stock', name: 'stock_unit'},
               {data: 'base_price', name: 'base_price'},
               {data: 'sell_price', name: 'sell_price'},
               {data: 'action', name: 'action', orderable: false, searchable: false},

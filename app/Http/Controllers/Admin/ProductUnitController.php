@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\ProductUnit;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\StockUnit;
 use DataTables;
 use Illuminate\Support\Facades\DB;
 class ProductUnitController extends Controller
@@ -19,7 +20,7 @@ class ProductUnitController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {            
-            $data = ProductUnit::with(['products','units','stock_units'])->select('product_units.*');
+            $data = ProductUnit::with(['products','units'])->select('product_units.*');
             return Datatables::eloquent($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
@@ -69,13 +70,15 @@ class ProductUnitController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        $stockUnit = StockUnit::where([['product_code','=',$request->product_code],['unit_id','=',$request->unit_id]])->first();
+        // dd($stockUnit->stock);
         ProductUnit::updateOrCreate(['id' => $request->Item_id],
         ['product_code' => $request->product_code,
         'unit_id'=> $request->unit_id,
         'qty_minimum' => $request->qty_minimum,
         'base_price'=>$request->base_price,
-        'sell_price' => $request->sell_price
+        'sell_price' => $request->sell_price,
+        'stock' => $stockUnit->stock
         ]);        
 
         return response()->json(['success'=>'Data saved successfully.']);
