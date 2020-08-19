@@ -1,4 +1,4 @@
-<h3>#Introduction<h3><br>
+<h3>#Introduction</h3><br>
 <p>POS was created using laravel, ajax and jquery. POS is used for financial management and product stock management. This POS is deliberately made for grocery stores because grocery stores have different prices for each unit. I hope this application can be used and useful for the grocery store. #movetodigital</p>
 
 <h3>#How to install/use pos-ajax-jquery</h3><br>
