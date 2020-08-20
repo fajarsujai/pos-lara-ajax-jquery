@@ -55,5 +55,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('product-unit','Admin\ProductUnitController');
 	Route::post('product-unit/getProduct','Admin\ProductUnitController@getProduct')->name('product-unit.getProduct');
 	Route::post('product-unit/getUnit','Admin\ProductUnitController@getUnit')->name('product-unit.getUnit');
+
+
+	// transaction
+	Route::get('transaction','Admin\TransaksiController@index');
+	Route::get('transaction/{id}/getProductUnitById','Admin\TransaksiController@getProductUnitById');
 });
 

@@ -106,10 +106,10 @@
           ajax: "{{ route('product-unit.index') }}",
           columns: [
               {data: 'DT_RowIndex', name: 'id'},
-              {data: 'products.product_name', name: 'product_name'},
-              {data: 'units.unit_name', name: 'unit_name'},              
+              {data: 'products.product_name', name: 'products.product_name'},
+              {data: 'units.unit_name', name: 'units.unit_name'},              
               {data: 'qty_minimum', name: 'qty_minimum'},
-              {data: 'stock', name: 'stock_unit'},
+              {data: 'stock', name: 'stock'},
               {data: 'base_price', name: 'base_price'},
               {data: 'sell_price', name: 'sell_price'},
               {data: 'action', name: 'action', orderable: false, searchable: false},

@@ -21,6 +21,7 @@ class ProductUnitController extends Controller
     {
         if ($request->ajax()) {            
             $data = ProductUnit::with(['products','units'])->select('product_units.*');
+            // $products = Product::with('categories')->select('products.*'); 
             return Datatables::eloquent($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){

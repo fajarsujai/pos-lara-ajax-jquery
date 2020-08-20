@@ -87,7 +87,7 @@
               {data: 'DT_RowIndex', name: 'id'},
               {data: 'product_code', name: 'product_code'},
               {data: 'product_name', name: 'product_name'},              
-              {data: 'categories.category_name', name: 'category_name'},
+              {data: 'categories.category_name', name: 'categories.category_name'},
               {data: 'action', name: 'action', orderable: false, searchable: false},
           ]
       });
